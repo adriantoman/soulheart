@@ -20,10 +20,10 @@ module Soulheart
     end
 
     def add_to_categories_array(category)
-      if @no_combinatorial 
-        return if redis.smembers(hidden_categories_id).include?(category)
-        redis.sadd hidden_categories_id, category
-      elsif !redis.smembers(categories_id).include?(category)
+      # if @no_combinatorial
+      #   return if redis.smembers(hidden_categories_id).include?(category)
+      #   redis.sadd hidden_categories_id, category
+      if !redis.smembers(categories_id).include?(category)
         redis.sadd categories_id, category
       end
     end
