@@ -21,9 +21,10 @@ module Soulheart
     end
 
     def combinatored_category_array
-      1.upto(sorted_category_array.size).
-        flat_map { |n| sorted_category_array.combination(n).
-        map { |el| el.join('') } }
+      sorted_category_array
+      # 1.upto(sorted_category_array.size).
+      #   flat_map { |n| sorted_category_array.combination(n).
+      #   map { |el| el.join('') } }
     end
 
     def set_category_combos_array

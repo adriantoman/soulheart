@@ -1,3 +1,5 @@
+require 'pp'
+
 module Soulheart
   class Loader < Base
     def initialize(defaults={})
@@ -83,9 +85,7 @@ module Soulheart
             next
           elsif category_combo == 'all'
             next if @no_all
-          elsif @no_combinatorial
-            next
-          elsif !category_combo.match(item['category']) 
+          elsif !category_combo.match(item['category'])
             next
           end
           add_item(item, category_id(category_combo), true) # send it base
